@@ -1,0 +1,31 @@
+
+<header>
+  <div class="titulo">
+    <h1>ChrisFlix</h1>
+  </div>
+  <div class="botones">
+    <button class="btn btn-primary" (click)="getpeliculasmasvistas()">Mas vistas</button>
+    <button class="btn btn-primary" (click)="getPeliculasComedia()">Comedia</button>
+    <button class="btn btn-primary" (click)="getPeliculasDrama()">Drama</button>
+    <button class="btn btn-primary" (click)="getPeliculasTeatro()">Accion</button>
+  </div>
+</header>
+
+<div class="conteiner">
+    <div class="titulo align-items-center">
+      <h1>Peliculas:  {{titulo}}</h1>
+    </div>
+
+    <div class="conteiner-caja">
+      <div class="carta" *ngFor="let item of peliculas" (click) = "cogerPeli(item.id)">
+        <img src="{{imagen + item.poster_path}}" alt="">
+      </div>
+    </div>
+
+  <div class="paginacion">
+    <button  class="btn btn-danger" (click)="atras()">Atras</button>
+    <h3>{{page}}</h3>
+    <button class="btn btn-primary" (click)="adelante()">Adelante</button>
+  </div>
+
+</div>
